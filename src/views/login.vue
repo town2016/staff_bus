@@ -10,9 +10,9 @@
       <div class="right">
         <div class="inner">
           <h2>登录</h2>
-          <iForm :formModel="formModel"></iForm>
+          <iForm :formModel="formModel" :formData="formData" ref="iform"></iForm>
           <br>
-          <el-button type="primary" class="login-btn">Login</el-button>
+          <el-button type="primary" class="login-btn" @click="goLogin">Login</el-button>
         </div>
       </div>
     </div>
@@ -29,23 +29,33 @@ export default {
   name: 'login',
   data () {
     return {
+      formData: {},
       formModel: [
         {
           elemType: 'input',
           placeholder: '请输入手机号/邮箱',
           label: '',
-          props: 'userName',
+          prop: 'userName',
+          rules: ['required'],
           ...layOut
         },
         {
           elemType: 'input',
           placeholder: '请输入密码',
           label: '',
-          props: 'password',
+          prop: 'password',
           type: 'password',
+          rules: ['required'],
           ...layOut
         }
       ]
+    }
+  },
+  methods: {
+    async goLogin () {
+      var valid = this.$refs.iform.validate()
+      if (!valid) return
+      this.$router.push("/home")
     }
   }
 }

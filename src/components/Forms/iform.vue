@@ -430,20 +430,20 @@ function clearObj (obj) {
 const initRules = (formModel) => {
     let rules = {}
     function makeValidator (item) {
-    if (item.rules !== undefined && item.visible !== false) {
-    rules[item.prop] = []
-    item.rules && item.rules.map(rule => {
-        if (typeof rule === 'function') {
-        rules[item.prop].push({validator: rule})
-        } else {
-        if (rule === 'required') {
-            rules[item.prop].push({required: true, message: '此项为必填项'})
-        } else {
-            rules[item.prop].push({validator: validators[rule + 'Check']})
-        }
-        }
-    })
-    }
+      if (item.rules !== undefined && item.visible !== false) {
+        rules[item.prop] = []
+        item.rules && item.rules.map(rule => {
+            if (typeof rule === 'function') {
+            rules[item.prop].push({validator: rule})
+            } else {
+            if (rule === 'required') {
+                rules[item.prop].push({required: true, message: '此项为必填项'})
+            } else {
+                rules[item.prop].push({validator: validators[rule + 'Check']})
+            }
+            }
+        })
+      }
     }
     if (!formModel.map) {
       throw new Error('请传入数组')
