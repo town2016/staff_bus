@@ -33,7 +33,7 @@
 		},
 		created () {
 			var routes = this.$router.options.routes
-			routes = routes[0].children
+			routes = routes[1].children
 			var makeMenu = (list) => {
 				var container = []
 				list.forEach(e => {
@@ -64,5 +64,6 @@
 				display: block;
 			}
 		}
+		
 	}
 </style>

@@ -6,6 +6,7 @@ const RealAuth = () => import('views/RealAuth/index.vue')
 const ProjectDetail = () => import('views/ProjectDetail/index.vue')
 const GroupDetail = () => import('views/GroupDetail/index.vue')
 const ProjectManage = () => import('views/ProjectManage/index.vue')
+
 export default [
 	{
 		path:'/home',

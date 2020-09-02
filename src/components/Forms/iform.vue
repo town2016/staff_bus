@@ -25,7 +25,7 @@
               <template slot="append" v-if="item.slot != undefined ">
                 <div class="el-input-group__append_render">
                   <span v-if="Object.prototype.toString.call(item.slot) === '[object String]'">{{item.slot}}</span>
-                  <Render v-else :render="item.render" ></Render>
+                  <Render v-else :render="item.slot" ></Render>
                 </div>
               </template>
             </el-input>

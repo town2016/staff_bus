@@ -1,9 +1,3 @@
-const layOut = {
-  xlSpan: 24,
-  colSpan: 24,
-  mdSpan: 24,
-  smSpan: 24,
-}
 export default {
   data () {
     return {
@@ -64,7 +58,7 @@ export default {
             prop: 'constructionUnit'
           }, {
             label: '地址',
-            prop: 'address'
+            prop: 'address',
           }, {
             label: '通过时间',
             prop: 'createDate'
@@ -82,36 +76,7 @@ export default {
             }
           }
         ],
-        create: [
-          {
-            elemType: 'input',
-            prop: 'projectName',
-            label: '项目名称',
-            ...layOut
-          }, {
-            elemType: 'input',
-            prop: 'constructionUnit',
-            label: '建设单位',
-            ...layOut
-          }, {
-            elemType: 'input',
-            prop: 'address',
-            label: '工程地点',
-            ...layOut
-          }, {
-            elemType: 'render',
-            prop: 'imgList',
-            label: '项目照片',
-            ...layOut,
-            render: () => {
-              return <div>
-                <ul>
-                  <li><el-icon class="el-icon-plus"></el-icon></li>
-                </ul>
-              </div>
-            }
-          }
-        ]
+        
       },
       formDataMap: {
         passed: [{banner: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3216805947,683070568&fm=26&gp=0.jpg'}],

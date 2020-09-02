@@ -13,6 +13,7 @@ import projectInfo from './components/projectInfo'
 import projectAdmin from './components/projectAdmin'
 import group from './components/group'
 import enclosure from './components/enclosure'
+import Track from './components/track'
 export default {
   name: 'projectDetail',
   mixins: [IndexMixin],
@@ -20,7 +21,8 @@ export default {
     projectInfo,
     projectAdmin,
     group,
-    enclosure
+    enclosure,
+    Track
   },
   data () {
     return {
@@ -39,7 +41,10 @@ export default {
         }, {
           label: '项目围栏',
           name: 'enclosure'
-        } 
+        }, {
+          label: '轨迹回放',
+          name: 'Track'
+        }
       ]
     }
   },
@@ -80,6 +85,18 @@ export default {
     float: left;
     margin-right: 10px;
     img{
+      height: 100%;
+    }
+  }
+}
+.projectDetail{
+  height: 100%;
+  .el-tabs{
+    height: 100%;
+  }
+  .el-tabs__content{
+    height: calc(100% - 50px);
+    >div{
       height: 100%;
     }
   }

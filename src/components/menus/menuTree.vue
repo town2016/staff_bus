@@ -7,7 +7,7 @@
         </template>
         <MenuTree :menuData="item.childs"></MenuTree>
       </el-submenu>
-      <el-menu-item :index="item.id" v-else :key="item.id">
+      <el-menu-item :index="item.id" v-else :key="item.id" :class="{active: item.path === curMenu.path}" @click="setCurMenu(item)">
       	<router-link tag='span' :to='item.path'>
       		{{item.label}}
       	</router-link>
@@ -19,6 +19,11 @@
 <script>
 	export default {
 		name: 'MenuTree',
+		data () {
+			return {
+				curMenu: {}
+			}
+		},
 		props: {
 			menuData: {
 				type: Array,
@@ -27,7 +32,12 @@
 				}
 			}
 		},
-		created () {}
+		created () {},
+		methods: {
+			setCurMenu (menu) {
+				this.curMenu = menu
+			}
+		}
 	}
 </script>
 
@@ -37,6 +47,9 @@
 		height: 40px;
 		line-height: 40px;
 	}
+	li.el-menu-item.active{
+			background-color: #ecf5ff;
+		}
 }
 span{
 	display: block;

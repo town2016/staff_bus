@@ -81,6 +81,10 @@
 			width: 100%;
 			overflow-x: hidden;
 			overflow-y: auto;
+			/deep/ .el-card__body{
+				height: 100%;
+				box-sizing: border-box;
+			}
 		}
 	}
 	._blank{

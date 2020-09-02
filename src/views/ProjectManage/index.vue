@@ -38,12 +38,6 @@ export default {
             tableData: this.formDataMap[val]
           }
         )
-        val === 'create' && (
-          this.attrs = {
-            formModel: this.formModelMap[val],
-            formData: this.formDataMap[val]
-          }
-        )
       },
       deep: true,
       immediate: true
@@ -69,3 +63,22 @@ export default {
   }
 }
 </script>
+<style lang="less">
+.file-wrapper{
+  li{
+    width: 90px;
+    height: 90px;
+    border: 1px dashed #ddd;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin-right: 10px;
+    i{
+      font-size: 40px;
+      color: #ddd;
+    }
+  }
+}
+</style>
