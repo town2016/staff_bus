@@ -2,6 +2,11 @@
   <div class="track-wrapper">
     <div class="btn-group">
       <el-select
+        size="medium"
+        v-model="staffGroup">
+        <el-option v-for="opt in groupOptions" :label="opt.label" :value="opt.value" :key="opt.value"></el-option>
+      </el-select>
+      <el-select
         v-model="staffName"
         filterable
         remote
@@ -28,8 +33,19 @@ export default {
   data () {
     return {
       staffName: '',
+      staffGroup: [],
       linePath: [],
-      polyLineEditor: null
+      polyLineEditor: null,
+      groupOptions: [
+        {
+          label: '红树湾班组',
+          value: 1,
+        }, {
+          label: '宝安班组',
+          value: 2,
+        }
+      ],
+      options: []
     }
   },
   mounted () {
